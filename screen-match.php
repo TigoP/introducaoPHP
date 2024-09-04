@@ -9,12 +9,14 @@ $nomeFilme = "Deadpool";
 #$anoLancamento = $argv[1] ?? 2022;
 $anoLancamento = 2022;
 $quantidadeNotas = $argc -1;
-$somaNotas = 0;
+
+$notas = [];
 
 for ($contador=1; $contador < $argc; $contador++) { 
-    $somaNotas += $argv[$contador];
-}
-$notaFilme = $somaNotas / $quantidadeNotas;
+    $notas[] = (float) $argv[$contador];
+} 
+
+$notaFilme = array_sum($notas) / $quantidadeNotas;
 echo "---------------------------------------------\n";
 $planoPrime = true;
 #echo $nomeFilme, $incluidonoPlano = $planoPrime && $anoLancamento < 2020;
@@ -50,3 +52,17 @@ echo $genero;
 echo "---------------------------------------------\n";
 
 $argc; #indica a quantidade de itens existem na variavel
+
+$notasFilmes = [9.8, 9.9, 10, 8.3, 9];
+var_dump($notasFilmes);
+echo "---------------------------------------------\n";
+
+$filmes = [
+    'nome' => 'Deadpool',
+    'ano' => 2024,
+    'nota' => 7.8,
+    'genero' => 'heroi'
+];
+echo $filmes['nome'];
+echo "\n";
+echo "---------------------------------------------\n";
