@@ -35,3 +35,43 @@ $celsius = 34;
 $fahrenheit = $celsius * 1.8 + 32;
 echo "A conversao de $celsius para fahrenheit é: $fahrenheit \n";
 echo "---------------------------------------------\n";
+
+#6 - Escreva um programa que exiba, na tela do usuário, todos os números ímpares de 0 à 100.
+for ($i=0; $i < 100; $i++) { 
+    if ($i % 2 !== 0 ) {
+        echo $i . " , ";
+    }
+}
+echo "\n";
+echo "---------------------------------------------\n";
+
+#7 - Crie um programa que, a partir de altura e peso, calcule o IMC e exiba a classificação do IMC.
+$peso = 79;
+$altura = 1.69;
+$imc = $peso / ($altura * $altura);
+
+if ($imc < 18.5) {
+    echo "Com o IMC a $imc , você está abaixo do peso!\n";
+} elseif ($imc >= 18.5 && $imc <= 24.9) {
+    echo "Com o IMC a $imc , você está com peso normal!\n";
+} elseif ($imc >= 25 && $imc <= 29.9) {
+    echo "Com o IMC a $imc , você está com acima do peso!\n";
+} else {
+    echo "Com o IMC $imc , você está com obesidade!\n";
+}
+echo "---------------------------------------------\n";
+
+#8 - Desenvolva um programa que exiba na tela uma saudação (bom dia, boa tarde ou boa noite) dependendo do horário encontrado em uma variável (inteiro representando as horas).
+$horas = 16;
+switch ($horas) {
+    case $horas < 12:
+        echo "Bom dia!\n";
+        break;
+    case $horas >= 12 && $horas <= 18:
+        echo "Boa tarde!\n";
+        break;
+    default:
+        "Boa noite\n";
+        break;
+}
+echo "---------------------------------------------\n";
