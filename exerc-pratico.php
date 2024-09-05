@@ -75,3 +75,31 @@ switch ($horas) {
         break;
 }
 echo "---------------------------------------------\n";
+
+#9 - Escreva um programa em PHP que remova os elementos duplicados de um array fornecido como entrada e exiba o array resultante. Por exemplo, se o array for [1, 2, 2, 3, 4, 4, 5], o programa deve exibir [1, 2, 3, 4, 5].
+$array = [1, 2, 2, 3, 4, 4, 5];
+print_r ($semDuplicatas = array_unique($array));
+echo "\n";
+echo "---------------------------------------------\n";
+#10 - Percorra um array de notas (cada uma de 0 a 10) e exiba a nota do aluno em questão com a informação se o aluno foi aprovado ou não.
+$notas = [10, 5.5, 3.8, 7.5, 6, 6.1, 5.9];
+
+foreach ($notas as $nota) {
+    $resultado = $nota > 6 ? "aprovado" : "reprovado";
+
+    echo "Esse(a) aluno(a) foi $resultado com a nota $nota \n";
+}
+echo "---------------------------------------------\n";
+#10 - Defina um array associativo que representa uma conta bancária (com titular e saldo) e exiba suas informações na tela.
+$contaBancaria = [
+    'nome' => 'Tiago',
+    'saldo' => 90000,
+];
+echo $contaBancaria['nome'] . ' possui R$ ' . $contaBancaria['saldo'];
+echo "---------------------------------------------\n";
+#11 - Crie um array contendo nomes de familiares seus e após sua criação adicione mais elementos ao array.
+
+$nomesFamiliares = ['Andreia', 'Tamires', 'Atila', 'João'];
+$nomesFamiliares[] = 'Bernardo';
+print_r($nomesFamiliares);
+echo "---------------------------------------------\n";
