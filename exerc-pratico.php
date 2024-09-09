@@ -103,3 +103,21 @@ $nomesFamiliares = ['Andreia', 'Tamires', 'Atila', 'João'];
 $nomesFamiliares[] = 'Bernardo';
 print_r($nomesFamiliares);
 echo "---------------------------------------------\n";
+#12 - Escreva uma função em PHP que receba dois números inteiros e uma string representando a operação matemática e retorne o resultado da operação.
+function operMath(int $x, int $y, string $resultado) {
+    return $resultado = $x + $y;
+}
+echo "---------------------------------------------\n";
+#13 - Crie uma função em PHP que calcule o IMC baseado na altura e peso passados por parâmetro.
+function calculoImc(float $peso, float $altura): float {
+    $altura = 1.69;
+    $peso = 79;
+
+    return $peso / $altura ** 2;
+}
+echo calculoImc(1.69, 79);
+echo "---------------------------------------------\n";
+#14 - Crie uma função em PHP que converta graus celsius para Fahrenheit.
+function conversao(float $celsius): float {
+    return ($celsius * 9 / 5) + 32;
+}
