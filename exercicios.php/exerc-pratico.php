@@ -143,3 +143,20 @@ print_r($string1);
 $ordenado = desordenado($string1);
 print_r($ordenado);
 echo "---------------------------------------------\n";
+#18 - Escreva um programa em PHP que abra um arquivo chamado teste.txt para ler a primeira linha e depois o fecha.
+$arquivo = fopen('teste.txt', 'r');
+$primeiraLinha = fgets($arquivo);
+fclose($arquivo);
+"---------------------------------------------\n";
+#19 - Escreva um programa em PHP que abra o arquivo teste.txt, acrescente a frase "PHP é incrível!" no final do arquivo e depois o feche.
+$nomeArq = 'teste.txt';
+$texto = "\n PHP é um programa!";
+$abrirArq = fopen($nomeArq, 'a');
+fwrite($abrirArq, $texto);
+fclose($abrirArq);
+"---------------------------------------------\n";
+#19 - Crie um programa que converta a string '{"nome":"Vinicius","anoNascimento":1997,"profissao":"Dev"}' em um objeto.
+$string2 = '{"nome":"Vinicius","anoNascimento":1997,"profissao":"Dev"}';
+$converter = json_decode($string2);
+var_dump($converter);
+echo "---------------------------------------------\n";

@@ -1,0 +1,3 @@
+Este programa é um teste.
+ PHP é um programa!
+ PHP é um programa!
