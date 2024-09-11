@@ -121,3 +121,25 @@ echo "---------------------------------------------\n";
 function conversao(float $celsius): float {
     return ($celsius * 9 / 5) + 32;
 }
+echo "---------------------------------------------\n";
+#15 - Escreva um programa em PHP que inicialize um array de notas e exiba somente as 3 maiores notas do array.
+$notas1 = [9, 8, 7, 10];
+rsort($notas1);
+echo $notas1[0], $notas1[1], $notas1[2];
+echo "---------------------------------------------\n";
+#16 - Crie um programa em PHP que transforme a string “Vinicius Dias,1997,Programador” em um array em que cada item está separado por vírgulas.
+$string = "Vinicius Dias,1997,Programador";
+var_dump(explode(',', $string));
+echo "---------------------------------------------\n";
+#17 - Escreva uma função em PHP que receba um array de strings por parâmetro e o retorne ordenado em ordem alfabética;
+
+function desordenado(array $string1): array {
+    sort($string1);
+    return $string1;
+}
+$string1 = array("casa", "papel", "sofa", "abacate");
+print_r($string1);
+
+$ordenado = desordenado($string1);
+print_r($ordenado);
+echo "---------------------------------------------\n";
