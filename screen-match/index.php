@@ -1,66 +1,41 @@
 <?php
 
-require __DIR__ . "/src/funcoes.php";
+require __DIR__ . '/src/Modelo/Genero.php';
+require __DIR__ . '/src/Modelo/Titulo.php';
+require __DIR__ . '/src/Modelo/Serie.php';
+require __DIR__ . '/src/Modelo/Filme.php';
+require __DIR__ . '/src/Calculos/CalduladoraDeMaratona.php';
 
-echo "Bem-vindo(a) ao screen match!\n";
 
-$nomeFilme = "Top Gun - Maverick";
+echo "Bem vindo!!";
 
-$anoLancamento = 2022;
-
-$quantidadeDeNotas = $argc - 1;
-$notas = [];
-
-for ($contador = 1; $contador < $argc; $contador++) {
-    $notas[] = (float) $argv[$contador];
-}
-
-$notaFilme = array_sum($notas) / $quantidadeDeNotas;
-$planoPrime = true;
-
-$incluidoNoPlano = incluidoNoPlano($planoPrime, $anoLancamento);
-
-echo "Nome do filme: " . $nomeFilme . "\n";
-echo "Nota do filme: $notaFilme\n";
-echo "Ano de lançamento: $anoLancamento\n";
-
-exibeMensagemLancamento($anoLancamento);
-
-$genero = match ($nomeFilme) {
-    "Top Gun - Maverick" => "ação",
-    "Thor: Ragnarok" => "super-herói",
-    "Se beber não case" => "comédia",
-    default => "gênero desconhecido",
-};
-
-echo "O gênero do filme é: $genero\n";
-
-$filme = criaFilme(
-    nome: "Thor: Ragnarok",
-    anoLancamento: 2021, 
-    nota: 7.8, 
-    genero: "super-herói"
+$filme = new Filme(
+    'Deadpool', 
+    2024, 
+    Genero::SuperHeroi,
+    180
 );
 
-echo $filme["ano"];
 
-var_dump($notas);
-echo "-----\n";
-sort($notas);
-var_dump($notas);
-$menorNota = min($notas);
-echo "A menor nota é $menorNota \n";
+$filme->avalia(10);
+$filme->avalia(9.8);
+$filme->avalia(10);
+$filme->avalia(9.9);
 
-var_dump($filme['nome']);
+var_dump($filme);
 
-$posicaoDoisPontos = strpos($filme['nome'], ':');
-var_dump($posicaoDoisPontos);
+echo$filme->media() . "\n";
 
-var_dump(substr($filme['nome'], 0, $posicaoDoisPontos));
+echo $filme->anoLancamento;
 
-# echo json_encode($filme); Isto é para exportar o arquivo para JSON
-#para importar é:
-#var_dump(json_decode('{"nome":"Thor: Ragnarok","ano":2021,"nota":7.8,"genero":"super-her\u00f3i"}', true));
+$serie = new Serie('Lost', 2001, Genero::Fantasia, 8, 10, 50);
+echo $serie->anoLancamento . "\n";
+$serie-> avalia(9);
+echo $serie-> media() . "\n";
 
-$filmeComoStringJson = json_encode($filme);
-file_put_contents(__DIR__ . '/filme.json', $filmeComoStringJson);
+$calculadora = new CalculadoraDeMaratona();
+$calculadora->inclui($filme);
+$calculadora->inclui($serie);
+$duracao = $calculadora->duracao();
+
+echo "Para esta maratona vc gastará $duracao minutos";
