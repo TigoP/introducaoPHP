@@ -1,6 +1,8 @@
 <?php
 
-class Serie extends Titulo {
+namespace screenmatch\Modelo;
+
+class Serie extends Titulo implements Avaliavel {
 
     public function __construct(
         string $nome, 
